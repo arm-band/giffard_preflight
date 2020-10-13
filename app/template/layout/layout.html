@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ config.appconfig.appname }}</title>
+    <meta name="theme-color" content="{{ config.appconfig.themecolor }}">
+    <meta name="description" content="{{ config.appconfig.description }}">
+    <meta name="author" content="{{ config.appconfig.author }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+
+    <meta name="twitter:card" content="{{ config.appconfig.ogp.card }}">
+    <meta name="twitter:site" content="@{{ config.appconfig.ogp.account }}">
+    <meta property="og:type" content="{{ config.appconfig.ogp.type }}">
+    <meta name="og:title" content="{{ config.appconfig.appname }}">
+    <meta name="og:site_name" content="{{ config.appconfig.appname }}">
+    <meta name="og:description" content="{{ config.appconfig.description }}">
+{% if config.appconfig.ogp.initImg is empty %}
+    <meta name="og:image" content="{{ config.appconfig.url }}{{ config.appconfig.ogp.image }}">
+{% else %}
+    <meta name="og:image" content="{{ config.appconfig.ogp.initImg }}">
+{% endif %}
+    <meta name="og:url" content="{{ config.appconfig.url }}">
+
+{% include 'layout/css.html.twig' %}
+
+  </head>
+  <body>
+
+    {% block body %}
+    {% endblock %}
+
+    <footer class="footer">
+    <p>Project powered by <a href="https://github.com/mercari/dietcube">Dietcube</a>, &#169;&nbsp;{{ cryear }}&nbsp;{{ config.appconfig.author }}. </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" defer="defer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous" defer="defer"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous" defer="defer"></script>
+  </body>
+</html>
+
+

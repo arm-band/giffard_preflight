@@ -1,0 +1,24 @@
+SetEnvIf Request_URI "(\.(log|txt|dat|csv|ini|tpl|yml|json|env|htaccess|htpasswd)|/(app|bin|migrations|tests|tmp|vendor)(.)*/)$" ng_dir
+Order Allow,Deny
+Allow from all
+Deny from env=ng_dir
+
+DirectoryIndex index.html index.php
+
+RewriteEngine On
+RewriteBase /@@ROOT_PATH@@
+
+RewriteRule ^$ webroot/index.php [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule (.*) - [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} \.(css|js|jpg|jpeg|gif|png|svg|ico)$
+RewriteCond %{REQUEST_FILENAME} !^(.*)(webroot)+(.*)$
+RewriteRule ^(.*)$ webroot/$1 [QSA,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ webroot/index.php [QSA,L]

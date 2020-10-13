@@ -1,0 +1,53 @@
+{% extends 'layout/layout.html' %}
+
+{% block body %}
+    <main class="main">
+        <section class="container my-5">
+            <div class="row mb-4">
+                <div class="col-md-9 offset-md-3">
+                    <h1 class="mb-3">{{ config.appconfig.appname }}</h1>
+                </div>
+            </div>
+            <form action="{{ rootpath }}icanfly/web" method="post">
+                <div class="form-group row">
+                    <label for="testFlight" class="col-md-3 col-form-label text-right">Test flight</label>
+                    <div class="col-md-9">
+                        <input type="text" class="form-control" id="testFlight" name="testFlight" value="Baptiste Jacques Henri Giffard">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ACAO" class="col-md-3 col-form-label text-right">Access-Control-Allow-Origin</label>
+                    <div class="col-md-9">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="ACAO" id="ACAO" checked>
+                            <label class="custom-control-label" for="ACAO">Access-Control-Allow-Origin</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ACAH" class="col-md-3 col-form-label text-right">Access-Control-Allow-Headers</label>
+                    <div class="col-md-9">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="ACAH" id="ACAH" checked>
+                            <label class="custom-control-label" for="ACAH">Access-Control-Allow-Headers</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="ACAM" class="col-md-3 col-form-label text-right">Access-Control-Allow-Methods</label>
+                    <div class="col-md-9">
+                        <div class="custom-control custom-switch">
+                            <input type="checkbox" class="custom-control-input" name="ACAM" id="ACAM" checked>
+                            <label class="custom-control-label" for="ACAM">Access-Control-Allow-Methods</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-9 offset-md-3">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-fw fa-paper-plane mr-2" aria-hidden="true"></i>送信</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+{% endblock %}

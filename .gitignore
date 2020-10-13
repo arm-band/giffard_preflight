@@ -1,0 +1,9 @@
+app/config/config_development.php
+vendor/*
+.idea/
+.sass-cache/
+/phpunit.xml
+/webroot/img/*
+.htaccess
+.env
+node_modules

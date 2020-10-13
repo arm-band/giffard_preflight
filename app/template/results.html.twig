@@ -1,0 +1,26 @@
+{% extends 'layout/layout.html' %}
+
+{% block body %}
+    <main class="main">
+        <section class="container my-5">
+            <div class="row mb-4">
+                <div class="col-md-9 offset-md-3">
+                    <h1 class="mb-3">Results</h1>
+                </div>
+            </div>
+            <form>
+                <div class="form-group row">
+                    <label for="jsonData" class="col-md-3 col-form-label text-right">Json data</label>
+                    <div class="col-md-9">
+                    <textarea name="jsonData" id="jsonData" class="w-100" cols="30">{{ jsondata|raw }}</textarea>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <div class="col-md-9 offset-md-3">
+                        <a href="{{ rootpath }}" class="btn btn-secondary"><i class="fas fa-fw fa-undo mr-2" aria-hidden="true"></i>トップへ戻る</a>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+{% endblock %}

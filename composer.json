@@ -1,0 +1,29 @@
+{
+    "name": "dietcube/project",
+    "description": "Project skeleton for Dietcube 1.0.x",
+    "require-dev": {
+        "phpunit/phpunit": "9.2.6",
+        "friendsofphp/php-cs-fixer": "v2.16.4",
+        "phpunit/php-code-coverage": "8.0.2",
+        "squizlabs/php_codesniffer": "3.5.5",
+        "phpmd/phpmd": "2.8.2",
+        "zonuexe/dietcube-whoops": "0.0.1",
+        "davedevelopment/phpmig": "v1.7.0"
+    },
+    "license": "MIT",
+    "require": {
+        "dietcube/dietcube": "1.0.3",
+        "vlucas/phpdotenv": "v5.1.0",
+        "vlucas/valitron": "v1.4.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "DietcubeKyokotsu\\": "app/"
+        }
+    },
+    "scripts": {
+        "start": "php -d variables_order=EGPCS -S localhost:8999 -t webroot/",
+        "post-install-cmd": "php bin/postinstall.php",
+        "post-update-cmd": "php bin/postinstall.php"
+    }
+}
